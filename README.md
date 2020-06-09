@@ -1,7 +1,14 @@
 # Nvidia Linux Exclusive Process
 
-## Clone & Install Ubuntu / Debian
+## Clone & Install Cron Ubuntu / Debian
 ```bash
-# Set Exclusive Process at Reboot
-echo "@reboot nvidia-smi -c EXCLUSIVE_PROCESS" | sudo tee -a /var/spool/cron/crontabs/root
+# Clone and enter directory
+git clone https://github.com/sawyermade/gpu_lock.git
+cd gpu_lock
+
+# Install & Create Cron
+bash ./add-gpu-lock.sh
+
+# Run after logging out and logging back in
+gpu-lock
 ```
